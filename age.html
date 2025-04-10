@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Äggjakt</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <h1>
-            🐣 Äggjakt 🐣
+            🐣 Ange ålder 🐣
+            <br>
+
         </h1>
-        
+        <nav>
+            <a href="egghunt.html" class="button" onclick="checkAge('barn')">0-10 år</a>
+            <a href="egghunt.html" class="button" onclick="checkAge('vuxen')">10-99 år</a>
+        </nav>
     </header>
-    <a href="age.html"><div class="button" id="button">Starta</div></a>
+
     <footer>
         <div id="demo"></div>
-        <br>Distans till målet
+
     </footer>
     <script src="script/questions.js"></script>
     <script src="script/coordinates.js"></script>
 </body>
+
 </html>

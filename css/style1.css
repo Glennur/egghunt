@@ -1,0 +1,49 @@
+@media (max-width: 600px) {
+    body {
+        text-align: center;
+
+        background-color: antiquewhite;
+        margin: 0px;
+        padding: 0px;
+        
+    }
+}
+
+@media (min-width: 601px) {
+    body {
+        text-align: center;
+
+        background-repeat: no-repeat;
+        background-color: antiquewhite;
+        margin: 0px;
+        padding: 0px;
+        
+    }
+}
+div
+{
+    align-items: center;     
+    justify-content: center;
+}
+.bottom
+{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+
+
+#map {
+    height: 400px;
+    width: 90vw;
+    border: 10px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+    padding: 0px;
+
+
+
+}
