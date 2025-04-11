@@ -4,7 +4,7 @@ let age;
 let lat = 58.673993;
 let long = 17.07306755;
 console.log(lat);
-var x = document.getElementById("demo");
+var x = document.getElementById("coordinates");
 
 
 
