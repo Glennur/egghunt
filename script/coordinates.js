@@ -32,7 +32,7 @@ function checkAge(value) {
   console.log(age)
 }
 
-// Initiera kartan med startkoordinater (ex. Stockholm) och zoomnivå
+// Initiera kartan med startkoordinater med zoom-nivå 19
 var map = L.map('map').setView([lat, long], 19);
 
 // Lägg till OpenStreetMap som bakgrundskarta

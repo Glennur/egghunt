@@ -3,7 +3,7 @@
     body 
     {
         text-align: center;
-        
+        font-family: 'Courier New', Courier, monospace;
         background-image: url(../images/bunny.png);
         background-attachment: fixed;
         background-position: center;
@@ -20,6 +20,7 @@
     body 
     {
         text-align: center;
+        font-family: 'Courier New', Courier, monospace;
         background-image: url(../images/bunny.png);
         background-attachment: fixed;
         background-position: center;        
@@ -94,5 +95,15 @@ a :hover
     padding: 10px; 
     font-size: 20px;
     color: black;
+}
 
+#fetchHolidays {
+    border: 1px solid burlywood;    
+    padding: 10px;             
+    margin-top: 20px;          
+    border-radius: 8px;        
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lägger till skugga */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;           
+    color: goldenrod;               
 }
