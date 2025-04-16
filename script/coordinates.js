@@ -1,9 +1,9 @@
 
 getLocation();
-let age;
+
 let lat = 58.673993;
 let long = 17.07306755;
-console.log(lat);
+console.log(lat, long);
 var x = document.getElementById("coordinates");
 
 
@@ -27,10 +27,6 @@ function showPosition(position) {
 
 }
 
-function checkAge(value) {
-  age = value
-  console.log(age)
-}
 
 // Initiera kartan med startkoordinater med zoom-nivå 19
 var map = L.map('map').setView([lat, long], 19);
@@ -40,11 +36,21 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
+const bunnyIcon = L.icon({
+  iconUrl: 'images/bunny.png', // byt till din faktiska sökväg
+  iconSize: [32, 32], // eller annan storlek som passar
+  iconAnchor: [16, 16] // sätter bilden centrerad
+});
+
+const bunnyMarker = L.marker([58.673993, 17.07306755], { icon: bunnyIcon }).addTo(map);
+
 var marker = L.marker([lat, long]).addTo(map);
+
 
 var circle = L.circle([58.673993, 17.07306755], {
   color: 'red',
   fillColor: '#f03',
-  fillOpacity: 0.5,
-  radius: 5
+  fillOpacity: 0.2,
+  radius: 8
 }).addTo(map);
+
