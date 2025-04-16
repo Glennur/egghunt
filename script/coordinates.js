@@ -11,8 +11,8 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.watchPosition(showPosition, null, {
       enableHighAccuracy: true,
-      maximumAge: 1000,
-      timeout: 5000
+      maximumAge: 1000
+      
     });
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
@@ -31,20 +31,19 @@ function showPosition(position) {
   const lat1 = parseFloat(localStorage.getItem("questlat"));
   const long1 = parseFloat(localStorage.getItem("questlong"));
 
-  const dist = getDistance(lat, long, lat1, long1)
+  let dist = getDistance(lat, long, lat1, long1)
 
   console.log("distans: " + dist + " meter");
   var x = document.getElementById("distance");
   x.innerHTML = dist + " meter till målet";
-
-
-  if (dist < 120) {
+  
+  console.log(dist)   
+  if (dist < 500) {
     document.getElementById("question-container").style.display = "block";
-    getQuestion()    
+    getQuestion() 
   }
+  
 }
-
-
 
 
 

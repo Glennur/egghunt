@@ -7,17 +7,66 @@ function setAge(value) {
     console.log(age)
 }
 
-function currentQuestLocation(counter) {
+function currentQuestLocation() {
     const question = questions.find(q => q.id === counter)
 
     const [lat, long] = question.place;
     localStorage.setItem("questlat", lat),
         localStorage.setItem("questlong", long)
-    drawMarker();
+        console.log(lat + "," + long)
+    drawMarker(lat, long);
 }
 
+
+
+
+function getQuestion() {
+    const questionobj = questions.find(q => q.id === counter);
+    if (!questionobj) return;
+    console.log("questionobj:", questionobj);
+
+
+    const fråga = questionobj[age].fråga;
+    const bildURL = questionobj.bildURL;
+
+    document.getElementById("question").innerHTML = fråga;
+    document.getElementById("question-img").src = "images/" + bildURL;
+    document.getElementById("question-img").style.display = "block"; // om du gömmer den ibland
+    
+
+    currentQuestLocation(counter)
+}
+
+
+
+function checkAnswer() {
+    const userInput = document.getElementById("answer-input").value.trim();
+    const currentQuestion = questions.find(q => q.id === counter);
+    const correctAnswer = currentQuestion[age].svar;
+    const feedb = currentQuestion.feedback;
+
+    if (userInput.toLowerCase() === correctAnswer.toLowerCase()) {
+        document.getElementById("feedback").innerText = "✅ Rätt svar! " + feedb;
+
+        setTimeout(() => {
+            counter++;
+            document.getElementById("question-container").style.display = "none";
+            //document.getElementById("question-container").innerHTML = "";
+            currentQuestLocation();
+        }, 1000);
+
+
+
+    } else {
+        document.getElementById("feedback").innerText = "❌ Fel svar, försök igen!";
+    }
+}
+
+
+// När du vill visa en fråga:
+//getQuestion(counter, age);
 const questions = [
-   
+
     {
         bildURL: "paintegg.jpg",
         id: 1,
@@ -75,7 +124,7 @@ const questions = [
         feedback: ""
     },
     {
-        id: 8, 
+        id: 8,
         bildURL: "chicken.jpg",
         place: [58.674751, 17.080026],
         barn: { fråga: "Vad heter kycklingens mamma?", svar: "Höna" },
@@ -101,50 +150,4 @@ const questions = [
 
 
 ];
-
-
-function getQuestion() {
-    const questionobj = questions.find(q => q.id === counter);
-    if (!questionobj) return;
-    console.log("questionobj:", questionobj);
-
-
-    const fråga = questionobj[age].fråga;
-    const bildURL = questionobj.bildURL;
-
-    document.getElementById("question").innerHTML = fråga;
-    document.getElementById("question-img").src = "images/" + bildURL;
-    document.getElementById("question-img").style.display = "block"; // om du gömmer den ibland
-   
-    currentQuestLocation(counter)
-}
-
-
-
-function checkAnswer() {
-    const userInput = document.getElementById("answer-input").value.trim();
-    const currentQuestion = questions.find(q => q.id === counter);
-    const correctAnswer = currentQuestion[age].svar;
-    const feedb = currentQuestion.feedback;
-
-    if (userInput.toLowerCase() === correctAnswer.toLowerCase()) {
-        document.getElementById("feedback").innerText = "✅ Rätt svar! " + feedb;
-
-        counter++;
-        setTimeout(() => {
-            document.getElementById("question-container").style.display = "none";
-            //document.getElementById("question-container").innerHTML = "";
-          }, 1000);
-          
-        
-
-    } else {
-        document.getElementById("feedback").innerText = "❌ Fel svar, försök igen!";
-    }
-}
-
-
-// När du vill visa en fråga:
-//getQuestion(counter, age);
-
 
