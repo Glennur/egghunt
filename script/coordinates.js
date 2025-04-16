@@ -39,6 +39,7 @@ function showPosition(position) {
 
 
   if (dist < 120) {
+    document.getElementById("question-container").style.display = "block";
     getQuestion()    
   }
 }

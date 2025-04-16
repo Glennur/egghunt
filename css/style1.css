@@ -43,9 +43,12 @@ div
 }
 
 
-img
+#question-img
 {
-    height: 20vh;    
+    height: 20vh; 
+    border: 4px solid black;  
+    border-radius: 10px; 
+    box-shadow: 5px 5px 5px gray;
 }
 
 #question-container:img
