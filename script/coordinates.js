@@ -28,6 +28,9 @@ function showPosition(position) {
 }
 
 
+//localStorage.setItem("questlat", lat),
+//localStorage.setItem("questlong", long)
+
 // Initiera kartan med startkoordinater med zoom-nivå 19
 var map = L.map('map').setView([lat, long], 19);
 
@@ -36,21 +39,26 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-const bunnyIcon = L.icon({
-  iconUrl: 'images/bunny.png', // byt till din faktiska sökväg
-  iconSize: [32, 32], // eller annan storlek som passar
-  iconAnchor: [16, 16] // sätter bilden centrerad
-});
+let bunnyMarker;
 
-const bunnyMarker = L.marker([58.673993, 17.07306755], { icon: bunnyIcon }).addTo(map);
+function drawMarker() {
+  const lat1 = parseFloat(localStorage.getItem("questlat"));
+  const long1 = parseFloat(localStorage.getItem("questlong"));
+  if (bunnyMarker) map.removeLayer(bunnyMarker);
 
-var marker = L.marker([lat, long]).addTo(map);
+  const bunnyIcon = L.icon({
+    iconUrl: 'images/bunny.png',
+    iconSize: [32, 32], // eller annan storlek som passar
+    iconAnchor: [16, 16] // sätter bilden centrerad
+  });
+  
+  bunnyMarker = L.marker([lat1, long1], { icon: bunnyIcon }).addTo(map);
+  
+  var marker = L.marker([lat, long]).addTo(map);
+}
 
 
-var circle = L.circle([58.673993, 17.07306755], {
-  color: 'red',
-  fillColor: '#f03',
-  fillOpacity: 0.2,
-  radius: 8
-}).addTo(map);
+
+
+
 
