@@ -48,13 +48,9 @@ img
     height: 20vh;    
 }
 
-#question-container
+#question-container:img
 {
+    height: 20vh;   
     
-    background-color: white;
-    width: 90vw;
-    border: 5px solid black;
-    border-radius: 10px;   
-    box-shadow: 5px 5px 5px gray;
-
 }
+
