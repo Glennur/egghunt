@@ -113,7 +113,7 @@ function getQuestion(counter, age) {
     const bildURL = questionobj.bildURL;
 
     document.getElementById("question").innerHTML = fråga;
-    document.getElementById("question-img").src = "../images/" + bildURL;
+    document.getElementById("question-img").src = "images/" + bildURL;
     document.getElementById("question-img").style.display = "block"; // om du gömmer den ibland
    
     currentQuestLocation(counter)
