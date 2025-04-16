@@ -1,4 +1,3 @@
-
 getLocation();
 
 let lat = 58.673993;
@@ -10,7 +9,11 @@ var x = document.getElementById("coordinates");
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition);
+    navigator.geolocation.watchPosition(showPosition, null, {
+      enableHighAccuracy: true,
+      maximumAge: 1000,
+      timeout: 5000
+    });
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -20,8 +23,7 @@ function showPosition(position) {
 
   lat = position.coords.latitude;
   long = position.coords.longitude;
-  /*x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;*/
+
   marker.setLatLng([lat, long]);
   map.setView([lat, long]);
 
@@ -35,8 +37,9 @@ function showPosition(position) {
   var x = document.getElementById("distance");
   x.innerHTML = dist + " meter till målet";
 
-  if (dist < 15) {
-    getQuestion()
+
+  if (dist < 120) {
+    getQuestion()    
   }
 }
 
@@ -65,8 +68,14 @@ function drawMarker() {
     iconSize: [32, 32], // eller annan storlek som passar
     iconAnchor: [16, 16] // sätter bilden centrerad
   });
+  const userIcon = L.icon({
+    iconUrl: 'images/user.png',
+    iconSize: [32, 32], // eller annan storlek som passar
+    iconAnchor: [16, 16] // sätter bilden centrerad
+  });
 
   bunnyMarker = L.marker([lat1, long1], { icon: bunnyIcon }).addTo(map);
+  
 
   if (marker) map.removeLayer(marker);
   marker = L.marker([lat, long]).addTo(map);

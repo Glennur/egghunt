@@ -1,6 +1,7 @@
 let counter = 1;
 let age = localStorage.getItem("age");
 
+
 function setAge(value) {
     localStorage.setItem("age", value)
     console.log(age)
@@ -102,7 +103,7 @@ const questions = [
 ];
 
 
-function getQuestion(counter, age) {
+function getQuestion() {
     const questionobj = questions.find(q => q.id === counter);
     if (!questionobj) return;
     console.log("questionobj:", questionobj);
@@ -130,7 +131,12 @@ function checkAnswer() {
         document.getElementById("feedback").innerText = "✅ Rätt svar! " + feedb;
 
         counter++;
-        getQuestion(counter, age);
+        setTimeout(() => {
+            //document.getElementById("question-container").style.display = "none";
+            document.getElementById("question-container").innerHTML = "";
+          }, 1000);
+          
+        
 
     } else {
         document.getElementById("feedback").innerText = "❌ Fel svar, försök igen!";
