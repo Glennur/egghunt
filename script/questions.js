@@ -1,6 +1,6 @@
 let counter = 1;
 let age = localStorage.getItem("age");
-
+drawMarker();
 
 function setAge(value) {
     localStorage.setItem("age", value)
@@ -14,7 +14,7 @@ function currentQuestLocation() {
     localStorage.setItem("questlat", lat),
         localStorage.setItem("questlong", long)
         console.log(lat + "," + long)
-    drawMarker(lat, long);
+    drawMarker();
 }
 
 

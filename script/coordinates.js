@@ -18,6 +18,7 @@ function getLocation() {
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
+  
 }
 
 function showPosition(position) {
@@ -57,12 +58,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 let bunnyMarker;
-let marker = L.marker([lat, long]).addTo(map);
+let marker; //= L.marker([lat, long]).addTo(map);
 
 function drawMarker() {
   const lat1 = parseFloat(localStorage.getItem("questlat"));
   const long1 = parseFloat(localStorage.getItem("questlong"));
-  if (bunnyMarker) map.removeLayer(bunnyMarker);
+  
 
   const bunnyIcon = L.icon({
     iconUrl: 'images/bunny.png',
@@ -75,11 +76,12 @@ function drawMarker() {
     iconAnchor: [16, 16] // sätter bilden centrerad
   });
 
+  if (bunnyMarker) map.removeLayer(bunnyMarker);
   bunnyMarker = L.marker([lat1, long1], { icon: bunnyIcon }).addTo(map);
   
 
   if (marker) map.removeLayer(marker);
-  marker = L.marker([lat, long]).addTo(map);
+  marker = L.marker([lat, long], { icon: userIcon }).addTo(map);
 }
 
 
