@@ -11,7 +11,8 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.watchPosition(showPosition, null, {
       enableHighAccuracy: true,
-      maximumAge: 1000
+      maximumAge: 1000,
+      timeout: 5000
       
     });
   } else {
@@ -38,7 +39,7 @@ function showPosition(position) {
   x.innerHTML = dist + " meter till målet";
   
   console.log(dist)   
-  if (dist < 500) {
+  if (dist < 50) {
     document.getElementById("question-container").style.display = "block";
     getQuestion() 
   }

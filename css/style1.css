@@ -34,7 +34,7 @@ div
 
 
 #map {
-    height: 40vh;
+    height: 35vh;
     width: 90vw;
     border: 5px solid black;
     border-radius: 10px;
@@ -53,7 +53,7 @@ div
 
 #question-container:img
 {
-    height: 20vh;   
+    height: 15vh;   
     
 }
 
