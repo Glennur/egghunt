@@ -73,7 +73,7 @@ const questions = [
         place: [58.673540, 17.074206],
         barn: { fråga: "Vad brukar man måla till påsk?", svar: "Ägg" },
         vuxen: { fråga: "Vilken religiös högtid firas samtidigt som påsken?", svar: "Påsk" },
-        feedback: "",
+        feedback: "Jakten på påskharen är igång. Se kartan vart nästa ledtråd är",
     },
     {
         id: 2,
@@ -81,7 +81,7 @@ const questions = [
         place: [58.673352, 17.073273],
         barn: { fråga: "Vilket djur kommer med ägg till påsk enligt sagan?", svar: "Påskharen" },
         vuxen: { fråga: "I vilket land sägs påskharen ha sitt ursprung?", svar: "Tyskland" },
-        feedback: ""
+        feedback: "Du hittar lite godispapper på marken och tänker att här har påskharen varit. Fortsätt"
     },
     {
         id: 3,
@@ -89,7 +89,7 @@ const questions = [
         place: [58.673978, 17.073074],
         barn: { fråga: "Vad kallas fredagen före påskhelgen?", svar: "Långfredag" },
         vuxen: { fråga: "Vad minns man under långfredagen?", svar: "Jesus korsfästelse" },
-        feedback: ""
+        feedback: "Spåren leder vidare... var kan haren ha skuttat nu?"
     },
     {
         id: 4,
@@ -97,7 +97,7 @@ const questions = [
         place: [58.674597, 17.073282],
         barn: { fråga: "Vad brukar barn klä ut sig till på påsken?", svar: "Påskkärring" },
         vuxen: { fråga: "Vad symboliserar fjädrarna i påskriset?", svar: "Livets återkomst" },
-        feedback: ""
+        feedback: "Något glittrar till i solen – ett färgglatt fjäder från harens hatt?"
     },
     {
         id: 5,
@@ -105,7 +105,7 @@ const questions = [
         place: [58.674699, 17.075097],
         barn: { fråga: "Vilken färg är vanlig på påskägg?", svar: "Gul" },
         vuxen: { fråga: "Vilken färg symboliserar påsk i kyrkan?", svar: "Vit" },
-        feedback: ""
+        feedback: "Du hör ett fnissande... påskharen kan inte vara långt borta!"
     },
     {
         id: 6,
@@ -113,7 +113,7 @@ const questions = [
         place: [58.674170, 17.076355],
         barn: { fråga: "Vad brukar man lägga i påskägg?", svar: "Godis" },
         vuxen: { fråga: "Vad kallas traditionen att ge barn godis i påskägg?", svar: "Äggjakt" },
-        feedback: ""
+        feedback: "Någon har tappat en morot – kan det vara harens mellanmål?"
     },
     {
         id: 7,
@@ -121,7 +121,7 @@ const questions = [
         place: [58.673582, 17.079377],
         barn: { fråga: "Vilken blomma är vanlig till påsk och är gul?", svar: "Påsklilja" },
         vuxen: { fråga: "Vilken blomma kallas ibland för narciss?", svar: "Påsklilja" },
-        feedback: ""
+        feedback: "Du känner doften av choklad i luften. Följ näsan!"
     },
     {
         id: 8,
@@ -129,7 +129,7 @@ const questions = [
         place: [58.674751, 17.080026],
         barn: { fråga: "Vad heter kycklingens mamma?", svar: "Höna" },
         vuxen: { fråga: "Vad symboliserar ägget i kristen påsktradition?", svar: "Livets början" },
-        feedback: ""
+        feedback: "En fjäder svävar förbi i vinden. Påskharen har varit i farten!"
     },
     {
         id: 9,
@@ -137,7 +137,7 @@ const questions = [
         place: [58.674572, 17.076346],
         barn: { fråga: "Vad heter söndagen då påsken börjar?", svar: "Påskdagen" },
         vuxen: { fråga: "Vad firar kristna på påskdagen?", svar: "Jesu uppståndelse" },
-        feedback: ""
+        feedback: "Ett kort meddelande skrivet med tassavtryck: 'Snart är du där!'"
     },
     {
         id: 10,
@@ -145,7 +145,7 @@ const questions = [
         place: [58.673686, 17.074157],
         barn: { fråga: "Vad åker påskkärringarna till?", svar: "Blåkulla" },
         vuxen: { fråga: "Vad ansågs Blåkulla vara enligt folktron?", svar: "Djävulens festplats" },
-        feedback: "Du är framme vid målet! Köp ägget själv!"
+        feedback: "Du är framme vid målet! Leta i lådcykeln"
     }
 
 
